@@ -8,6 +8,6 @@ public abstract class Piece {
 	public String code;
 	String name;
 	File image; //SVG File for the piece
-	int position[];
+	int[] position;
 	abstract boolean[][] possibleMoves(String[][] board);
 }
