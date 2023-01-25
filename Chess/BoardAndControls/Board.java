@@ -1,30 +1,31 @@
-package Chess;
+package Chess.BoardAndControls;
 
-import Chess.Pieces.Piece;
+import Chess.Pieces.*;
+
 public class Board {
 	public static void initialiseBoard(Piece[][] board) {
-		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    board[i][j] = "-";
+		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    board[i][j] = new None(i, j);
 
-		for(int i = 0;i < 8;i++)    board[6][i] = "WP";     //White Pawns
-		for(int i = 0;i < 8;i++)    board[1][i] = "BP";     //Black Pawns
+		for(int i = 0;i < 8;i++)    board[6][i] = new Pawn(1, 6, i);     //White Pawns
+		for(int i = 0;i < 8;i++)    board[1][i] = new Pawn(0, 1, i);     //Black Pawns
 
-		board[0][0] = "BR";         board[0][7] = "BR";     //Black Rook
-		board[7][0] = "WR";         board[7][7] = "WR";     //White Rook
+		board[0][0] = new Rook(0, 0, 0);         board[0][7] = new Rook(0, 0, 7);     //Black Rook
+		board[7][0] = new Rook(1, 7, 0);         board[7][7] = new Rook(1, 7, 7);     //White Rook
 
-		board[0][1] = "BH";         board[0][6] = "BH";     //Black Knight
-		board[7][1] = "WH";         board[7][6] = "WH";     //White Knight
+		board[0][1] = new Knight(0, 0, 1);         board[0][6] = new Knight(0, 0, 6);     //Black Knight
+		board[7][1] = new Knight(1, 7, 1);         board[7][6] = new Knight(1, 7, 6);     //White Knight
 
-		board[0][2] = "BB";         board[0][5] = "BB";     //Black Bishop
-		board[7][2] = "WB";         board[7][5] = "WB";     //White Bishop
+		board[0][2] = new Bishop(0, 0, 2);         board[0][5] = new Bishop(0, 0, 5);     //Black Bishop
+		board[7][2] = new Bishop(1, 7, 2);         board[7][5] = new Bishop(1, 7, 5);     //White Bishop
 
-		board[0][3] = "BQ";         board[0][4] = "BK";     //Black Queen and King
-		board[7][3] = "WQ";         board[7][4] = "WK";     //White Queen and King
+		board[0][3] = new Queen(0, 0, 3);         board[0][4] = new King(0, 0, 4);     //Black Queen and King
+		board[7][3] = new Queen(1, 7, 3);         board[7][4] = new King(1, 7, 4);     //White Queen and King
 	}
 
 	public static void printBoard(Piece[][] board) {
 		for(int i = 0;i < 8;i++) {
 			for (int j = 0; j < 8; j++)
-				System.out.print(board[i][j] + "\t");
+				System.out.print(board[i][j].code + "\t");
 			System.out.println();
 		}
 	}
