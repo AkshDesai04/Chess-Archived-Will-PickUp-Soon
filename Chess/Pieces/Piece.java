@@ -7,7 +7,7 @@ public abstract class Piece {
 	int color; //0 for black. 1 for white.
 	public String code;
 	String name;
-	File image; //SVG File for the piece
+	public File image; //SVG File for the piece
 	int[] position;
 	abstract boolean[][] possibleMoves(String[][] board);
 }
