@@ -1,8 +1,9 @@
-public class Initialise {
-	static void initialiseBoard(String[][] board) {
-		for(int i = 0;i < 8;i++)
-			for(int j = 0;j < 8;j++)
-				board[i][j] = "-";
+package Chess;
+
+import Chess.Pieces.Piece;
+public class Board {
+	public static void initialiseBoard(Piece[][] board) {
+		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    board[i][j] = "-";
 
 		for(int i = 0;i < 8;i++)    board[6][i] = "WP";     //White Pawns
 		for(int i = 0;i < 8;i++)    board[1][i] = "BP";     //Black Pawns
@@ -18,5 +19,13 @@ public class Initialise {
 
 		board[0][3] = "BQ";         board[0][4] = "BK";     //Black Queen and King
 		board[7][3] = "WQ";         board[7][4] = "WK";     //White Queen and King
+	}
+
+	public static void printBoard(Piece[][] board) {
+		for(int i = 0;i < 8;i++) {
+			for (int j = 0; j < 8; j++)
+				System.out.print(board[i][j] + "\t");
+			System.out.println();
+		}
 	}
 }
