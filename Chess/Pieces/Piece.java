@@ -7,7 +7,7 @@ public abstract class Piece {
 	int color; //0 for black. 1 for white.
 	public String code;
 	public String name;
-	public final String filePath = "C:\\Users\\akshd\\IdeaProjects\\Chess\\Chess\\assets\\";
+	public static final String filePath = "C:\\Users\\akshd\\IdeaProjects\\Chess\\Chess\\assets\\";
 	public Icon icon;
 	int[] position;
 	public abstract boolean[][] possibleMoves(Piece[][] board, int[] position);
