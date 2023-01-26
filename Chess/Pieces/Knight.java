@@ -14,6 +14,16 @@ public class Knight extends Piece {
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
 		boolean[][] moves = new boolean[8][8];
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    moves[i][j] = false;
+
+		try{moves[position[0] + 2][position[1] + 1] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] + 2][position[1] - 1] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] - 2][position[1] + 1] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] - 2][position[1] - 1] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] + 1][position[1] + 2] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] + 1][position[1] - 2] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] - 1][position[1] + 2] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+		try{moves[position[0] - 1][position[1] - 2] = true;}    catch(ArrayIndexOutOfBoundsException ignored) {}
+
 		return moves;
 	}
 }
