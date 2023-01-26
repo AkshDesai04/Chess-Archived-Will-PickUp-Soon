@@ -10,5 +10,5 @@ public abstract class Piece {
 	public final String filePath = "C:\\Users\\akshd\\IdeaProjects\\Chess\\Chess\\assets\\";
 	public Icon icon;
 	int[] position;
-	abstract boolean[][] possibleMoves(String[][] board);
+	public abstract boolean[][] possibleMoves(Piece[][] board, int[] position);
 }
