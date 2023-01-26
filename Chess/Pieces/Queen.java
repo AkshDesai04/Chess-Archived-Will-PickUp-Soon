@@ -1,7 +1,6 @@
 package Chess.Pieces;
 
 import javax.swing.*;
-import java.io.File;
 
 public class Queen extends Piece {
 	public Queen(int color, int x, int y) {

@@ -1,7 +1,6 @@
 package Chess.Pieces;
 
 import javax.swing.*;
-import java.io.File;
 
 public class Knight extends Piece {
 	public Knight (int color, int x, int y) {

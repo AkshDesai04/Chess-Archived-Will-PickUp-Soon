@@ -1,7 +1,6 @@
 package Chess.Pieces;
 
 import javax.swing.*;
-import java.io.File;
 
 public class Rook extends Piece {
 	public Rook(int color, int x, int y) {

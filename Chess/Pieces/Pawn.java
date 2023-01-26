@@ -1,7 +1,6 @@
 package Chess.Pieces;
 
 import javax.swing.*;
-import java.io.File;
 
 public class Pawn extends Piece {
 	public Pawn(int color, int x, int y) {
