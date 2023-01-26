@@ -22,7 +22,7 @@ public class BoardGUI {
 		for(int i = 0;i < 8;i++) {
 			for(int j = 0;j < 8;j++) {
 				spots[i][j] = new JButton(board[i][j].icon);      //TODO: why the flip?
-				spots[i][j].setBounds(i*dimensions/10, j*dimensions/10, dimensions/10, dimensions/10);
+				spots[i][j].setBounds(j*dimensions/10, i*dimensions/10, dimensions/10, dimensions/10);
 				int finalI = i;
 				int finalJ = j;
 				spots[i][j].addActionListener(new ActionListener() {
