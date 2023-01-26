@@ -45,4 +45,10 @@ public class BoardGUI {
 		frame.setLayout(null);
 		frame.setVisible(true);
 	}
+
+	public static void cleanBoardColors() {
+		for(int i = 0;i < 8;i++)
+			for(int j = 0;j < 8;j++)
+				spots[i][j].setBackground((i+j)%2 == 0 ? Color.WHITE:Color.BLACK);
+	}
 }
