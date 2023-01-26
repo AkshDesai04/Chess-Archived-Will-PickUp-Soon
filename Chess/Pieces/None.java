@@ -6,6 +6,7 @@ public class None extends Piece {
 	name = "None";
 	this.position = position;
 	code = "--";
+	color = -1;
 }
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
 		boolean[][] moves = new boolean[8][8];
