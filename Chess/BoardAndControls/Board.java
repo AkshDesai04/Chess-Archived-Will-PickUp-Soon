@@ -13,8 +13,8 @@ public class Board {
 		for(int i = 0;i < 8;i++)    board[6][i] = new Pawn(WHITE, new int[]{6, i});     //White Pawns
 		for(int i = 0;i < 8;i++)    board[1][i] = new Pawn(BLACK, new int[]{1, i});     //Black Pawns
 
-		board[0][0] = new Rook(0, new int[]{0, 0});         board[0][7] = new Rook(0, new int[]{0, 7});      //Black Rook
-		board[7][0] = new Rook(WHITE, new int[]{7, 0});          board[7][7] = new Rook(WHITE, new int[]{7, 7});        //White Rook
+		board[0][0] = new Rook(BLACK, new int[]{0, 0});           board[0][7] = new Rook(BLACK, new int[]{0, 7});       //Black Rook
+		board[7][0] = new Rook(WHITE, new int[]{7, 0});           board[7][7] = new Rook(WHITE, new int[]{7, 7});       //White Rook
 
 		board[0][1] = new Knight(BLACK, new int[]{0, 1});         board[0][6] = new Knight(BLACK, new int[]{0, 6});     //Black Knight
 		board[7][1] = new Knight(WHITE, new int[]{7, 1});         board[7][6] = new Knight(WHITE, new int[]{7, 6});     //White Knight
@@ -29,7 +29,7 @@ public class Board {
 	public static void printBoard(Piece[][] board) {
 		for(int i = 0;i < 8;i++) {
 			for (int j = 0; j < 8; j++)
-				System.out.print(board[i][j].code + i + j + "\t");
+				System.out.print(board[i][j].code + "\t");
 			System.out.println();
 		}
 	}
