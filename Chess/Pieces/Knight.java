@@ -1,5 +1,6 @@
 package Chess.Pieces;
 
+import javax.swing.*;
 import java.io.File;
 
 public class Knight extends Piece {
@@ -7,7 +8,7 @@ public class Knight extends Piece {
 		value = 3;
 		name = (color == 1 ? "White":"Black") + " Knight";
 		code = (color == 1 ? "W":"B") + "H";
-		image = new File(".C:\\Users\\akshd\\IdeaProjects\\Chess\\Chessassets\\" + (color == 1 ? "White":"Black") + "Knight.svg");
+		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Knight.png");
 		this.color = color;
 		position = new int[]{x, y};
 	}
