@@ -5,7 +5,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 
 import Chess.Pieces.*;
@@ -21,11 +20,8 @@ public class BoardGUI {
 
 		for(int i = 0;i < 8;i++) {
 			for(int j = 0;j < 8;j++) {
-				spots[i][j] = new JButton(board[j][i].code);      //TODO: why the flip?
+				spots[i][j] = new JButton(board[j][i].code + j + i);        //TODO:Why does the board need to be flipped?
 //				spots[i][j].setIcon((new ImageIcon(ImageIO.read(board[i][j].image))));
-//				spots[i][j].setIcon((new ImageIcon(ImageIO.read(new File("C:\\Users\\akshd\\IdeaProjects\\Chess\\Chess\\assets\\BlackKing.svg")))));
-//				spots[i][j].setText("Hola");
-				spots[i][j].setBackground((i+j)%2 == 0 ? Color.WHITE:Color.BLACK);
 				spots[i][j].setBounds(i*dimensions/10, j*dimensions/10, dimensions/10, dimensions/10);
 				int finalI = i;
 				int finalJ = j;
@@ -41,7 +37,9 @@ public class BoardGUI {
 			}
 		}
 
-		frame.setSize(dimensions, dimensions);
+		cleanBoardColors();
+
+		frame.setSize(dimensions*82/100, dimensions*85/100);
 		frame.setLayout(null);
 		frame.setVisible(true);
 	}

@@ -8,8 +8,8 @@ public class Board {
 	public static void initialiseBoard(Piece[][] board) {
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    board[i][j] = new None(i, j);
 
-		for(int i = 0;i < 8;i++)    board[6][i] = new Pawn(1, 6, i);     //White Pawns
-		for(int i = 0;i < 8;i++)    board[1][i] = new Pawn(0, 1, i);     //Black Pawns
+		for(int i = 0;i < 8;i++)    board[6][i] = new Pawn(1, new int[]{6, i});     //White Pawns
+		for(int i = 0;i < 8;i++)    board[1][i] = new Pawn(0, new int[]{1, i});     //Black Pawns
 
 		board[0][0] = new Rook(0, 0, 0);         board[0][7] = new Rook(0, 0, 7);     //Black Rook
 		board[7][0] = new Rook(1, 7, 0);         board[7][7] = new Rook(1, 7, 7);     //White Rook
