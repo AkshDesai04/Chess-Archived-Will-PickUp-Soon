@@ -1,9 +1,12 @@
 package Chess.Pieces;
 
+import java.io.File;
+
 public class King extends Piece {
 	public King(int color, int x, int y) {
 		name = (color == 1 ? "White":"Black") + " King";
 		code = (color == 1 ? "W":"B") + "K";
+		image = new File(".C:\\Users\\akshd\\IdeaProjects\\Chess\\Chessassets\\" + (color == 1 ? "White":"Black") + "King.svg");
 		this.color = color;
 		position = new int[]{x, y};
 	}
