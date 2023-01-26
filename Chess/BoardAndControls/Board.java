@@ -2,6 +2,8 @@ package Chess.BoardAndControls;
 
 import Chess.Pieces.*;
 
+import java.awt.*;
+
 public class Board {
 	public static void initialiseBoard(Piece[][] board) {
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    board[i][j] = new None(i, j);
@@ -25,8 +27,21 @@ public class Board {
 	public static void printBoard(Piece[][] board) {
 		for(int i = 0;i < 8;i++) {
 			for (int j = 0; j < 8; j++)
-				System.out.print(board[i][j].code + "\t");
+				System.out.print(board[i][j].code + i + j + "\t");
 			System.out.println();
+		}
+	}
+
+	public static void showPossibleMoves(Piece[][] board, int[] position) {
+		System.out.println("Called Board");
+		boolean[][] possibleMove = board[position[0]][position[1]].possibleMoves(board, position);
+		for(int i = 0;i < 8;i++) {
+			for(int j = 0;j < 8;j++) {
+				if(possibleMove[i][j]) {
+					BoardGUI.spots[i][j].setBackground(Color.GREEN);
+					System.out.println("Color");
+				}
+			}
 		}
 	}
 }

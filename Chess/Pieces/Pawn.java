@@ -11,9 +11,16 @@ public class Pawn extends Piece {
 		this.color = color;
 		position = new int[]{x, y};
 	}
-	boolean[][] possibleMoves(String[][] board) {
+	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
+		System.out.println("Called Pawn");
 		boolean[][] moves = new boolean[8][8];
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    moves[i][j] = false;
+
+		if(color == 0) {
+			moves[position[0]][position[1]+1] = true;
+			if(position[0] == 1)
+				moves[position[0]][position[1]+2] = true;
+		}
 		return moves;
 	}
 }

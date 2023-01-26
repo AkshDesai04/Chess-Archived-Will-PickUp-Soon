@@ -9,5 +9,5 @@ public abstract class Piece {
 	String name;
 	public File image; //SVG File for the piece
 	int[] position;
-	abstract boolean[][] possibleMoves(String[][] board);
+	public abstract boolean[][] possibleMoves(Piece[][] board, int[] position);
 }
