@@ -33,14 +33,12 @@ public class Board {
 	}
 
 	public static void showPossibleMoves(Piece[][] board, int[] position) {
-		System.out.println("Called Board");
 		boolean[][] possibleMove = board[position[0]][position[1]].possibleMoves(board, position);
 		BoardGUI.cleanBoardColors();
 		for(int i = 0;i < 8;i++) {
 			for(int j = 0;j < 8;j++) {
 				if(possibleMove[i][j]) {
 					BoardGUI.spots[i][j].setBackground(Color.GREEN);
-					System.out.println("Color");
 				}
 			}
 		}

@@ -1,20 +1,18 @@
 package Chess.Pieces;
 
 import Chess.BoardAndControls.Board;
-
-import java.io.File;
+import javax.swing.*;
 
 public class Pawn extends Piece {
 	public Pawn(int color, int[] position) {
 		value = 1;
 		name = (color == 1 ? "White":"Black") + " Pawn";
 		code = (color == 1 ? "W":"B") + "P";
-		image = new File(".C:\\Users\\akshd\\IdeaProjects\\Chess\\Chessassets\\" + (color == 1 ? "White":"Black") + "Pawn.svg");
+		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Pawn.png");
 		this.color = color;
 		this.position = position;
 	}
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
-		System.out.println("Called Pawn");
 		boolean[][] moves = new boolean[8][8];
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    moves[i][j] = false;
 
@@ -23,7 +21,6 @@ public class Pawn extends Piece {
 			if(position[0] == 1)
 				moves[position[0] + 2][position[1]] = true;
 		}
-		Board.printBoard(board);
 		return moves;
 	}
 }
