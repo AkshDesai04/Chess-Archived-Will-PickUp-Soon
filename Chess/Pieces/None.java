@@ -1,10 +1,10 @@
 package Chess.Pieces;
 
 public class None extends Piece {
-	public None(int x, int y) {
+	public None(int[] position) {
 	value = 0;
 	name = "None";
-	position = new int[]{x, y};
+	this.position = position;
 	code = "--";
 }
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {

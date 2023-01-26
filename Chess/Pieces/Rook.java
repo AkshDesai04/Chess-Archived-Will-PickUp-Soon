@@ -3,14 +3,14 @@ package Chess.Pieces;
 import javax.swing.*;
 
 public class Rook extends Piece {
-	public Rook(int color, int x, int y) {
+	public Rook(int color, int[] position) {
 		value = 5;
 		name = (color == 1 ? "White":"Black") + " Rook";
 		code = (color == 1 ? "W":"B") + "R";
 		code = (color == 1 ? "W":"B") + "R";
 		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Rook.png");
 		this.color = color;
-		position = new int[]{x, y};
+		this.position = position;
 	}
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
 		boolean[][] moves = new boolean[8][8];

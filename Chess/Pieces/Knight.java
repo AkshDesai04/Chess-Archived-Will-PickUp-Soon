@@ -3,13 +3,13 @@ package Chess.Pieces;
 import javax.swing.*;
 
 public class Knight extends Piece {
-	public Knight (int color, int x, int y) {
+	public Knight (int color, int[] position) {
 		value = 3;
 		name = (color == 1 ? "White":"Black") + " Knight";
 		code = (color == 1 ? "W":"B") + "H";
 		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Knight.png");
 		this.color = color;
-		position = new int[]{x, y};
+		this.position = position;
 	}
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
 		boolean[][] moves = new boolean[8][8];

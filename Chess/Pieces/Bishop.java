@@ -4,13 +4,13 @@ import javax.swing.*;
 
 public class Bishop extends Piece {
 
-	public Bishop(int color, int x, int y) {
+	public Bishop(int color, int[] position) {
 		value = 3;
 		name = (color == 1 ? "White":"Black") + " Bishop";
 		code = (color == 1 ? "W":"B") + "B";
 		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Bishop.png");
 		this.color = color;
-		position = new int[]{x, y};
+		this.position = position;
 	}
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
 		boolean[][] moves = new boolean[8][8];
