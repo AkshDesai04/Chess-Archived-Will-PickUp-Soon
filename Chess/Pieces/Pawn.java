@@ -20,12 +20,20 @@ public class Pawn extends Piece {
 			moves[position[0] + 1][position[1]] = true;
 			if(position[0] == 1 && board[position[0] + 2][position[1]].code == "--")
 				moves[position[0] + 2][position[1]] = true;
+
+			//Captures
+			if(board[position[0] + 1][position[1] + 1].color == 1)      moves[position[0] + 1][position[1] + 1] = true;
+			if(board[position[0] + 1][position[1] - 1].color == 1)      moves[position[0] + 1][position[1] - 1] = true;
 		}
 
 		if(color == 1 && board[position[0] - 1][position[1]].code == "--") {
 			moves[position[0] - 1][position[1]] = true;
 			if(position[0] == 6 && board[position[0] - 2][position[1]].code == "--")
 				moves[position[0] - 2][position[1]] = true;
+
+			//Captures
+			if(board[position[0] - 1][position[1] - 1].color == 0)      moves[position[0] - 1][position[1] - 1] = true;
+			if(board[position[0] - 1][position[1] + 1].color == 0)      moves[position[0] - 1][position[1] + 1] = true;
 		}
 
 //		if(board[position[0] + color == 0?-1:1][position[1]].code == "--") {
