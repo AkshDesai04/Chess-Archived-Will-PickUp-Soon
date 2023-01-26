@@ -22,7 +22,8 @@ public class BoardGUI {
 			for(int j = 0;j < 8;j++) {
 				spots[i][j] = new JButton(board[j][i].code + j + i);        //TODO:Why does the board need to be flipped?
 //				spots[i][j].setIcon((new ImageIcon(ImageIO.read(board[i][j].image))));
-				spots[i][j].setBounds(i*dimensions/10, j*dimensions/10, dimensions/10, dimensions/10);
+//				spots[i][j].setBounds(i*dimensions/10, j*dimensions/10, dimensions/10, dimensions/10);
+				spots[i][j].setBounds(j*dimensions/10, i*dimensions/10, dimensions/10, dimensions/10);
 				int finalI = i;
 				int finalJ = j;
 				spots[i][j].addActionListener(new ActionListener() {

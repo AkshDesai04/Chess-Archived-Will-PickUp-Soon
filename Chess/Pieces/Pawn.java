@@ -19,9 +19,9 @@ public class Pawn extends Piece {
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    moves[i][j] = false;
 
 		if(color == 0) {
-			moves[position[0]][position[1]+1] = true;
+			moves[position[0] + 1][position[1]] = true;
 			if(position[0] == 1)
-				moves[position[0]][position[1]+2] = true;
+				moves[position[0] + 2][position[1]] = true;
 		}
 		Board.printBoard(board);
 		return moves;
