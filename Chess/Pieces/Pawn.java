@@ -22,8 +22,10 @@ public class Pawn extends Piece {
 				moves[position[0] + 2][position[1]] = true;
 
 			//Captures
-			if(board[position[0] + 1][position[1] + 1].color == 1)      moves[position[0] + 1][position[1] + 1] = true;
-			if(board[position[0] + 1][position[1] - 1].color == 1)      moves[position[0] + 1][position[1] - 1] = true;
+			try {if (board[position[0] + 1][position[1] + 1].color == 1) moves[position[0] + 1][position[1] + 1] = true;}
+			catch(ArrayIndexOutOfBoundsException ignored) {}
+			try {if (board[position[0] + 1][position[1] - 1].color == 1) moves[position[0] + 1][position[1] - 1] = true;}
+			catch(ArrayIndexOutOfBoundsException ignored) {}
 		}
 
 		if(color == 1 && Objects.equals(board[position[0] - 1][position[1]].code, "--")) {
@@ -32,8 +34,10 @@ public class Pawn extends Piece {
 				moves[position[0] - 2][position[1]] = true;
 
 			//Captures
-			if(board[position[0] - 1][position[1] - 1].color == 0)      moves[position[0] - 1][position[1] - 1] = true;
-			if(board[position[0] - 1][position[1] + 1].color == 0)      moves[position[0] - 1][position[1] + 1] = true;
+			try {if (board[position[0] - 1][position[1] - 1].color == 0) moves[position[0] - 1][position[1] - 1] = true;}
+			catch(ArrayIndexOutOfBoundsException ignored) {}
+			try {if (board[position[0] - 1][position[1] + 1].color == 0) moves[position[0] - 1][position[1] + 1] = true;}
+			catch(ArrayIndexOutOfBoundsException ignored) {}
 		}
 
 //		if(board[position[0] + color == 0?-1:1][position[1]].code == "--") {
