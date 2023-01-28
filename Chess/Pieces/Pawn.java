@@ -16,27 +16,27 @@ public class Pawn extends Piece {
 		boolean[][] moves = new boolean[8][8];
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    moves[i][j] = false;
 
-		if(color == 0 && Objects.equals(board[position[0] + 1][position[1]].code, "--")) {
+		if(color == BLACK && Objects.equals(board[position[0] + 1][position[1]].code, "--")) {      //Black pawn moves
 			moves[position[0] + 1][position[1]] = true;
 			if(position[0] == 1 && Objects.equals(board[position[0] + 2][position[1]].code, "--"))
 				moves[position[0] + 2][position[1]] = true;
 
 			//Captures
-			try {if (board[position[0] + 1][position[1] + 1].color == 1) moves[position[0] + 1][position[1] + 1] = true;}
+			try {if (board[position[0] + 1][position[1] + 1].color == WHITE) moves[position[0] + 1][position[1] + 1] = true;}
 			catch(ArrayIndexOutOfBoundsException ignored) {}
-			try {if (board[position[0] + 1][position[1] - 1].color == 1) moves[position[0] + 1][position[1] - 1] = true;}
+			try {if (board[position[0] + 1][position[1] - 1].color == WHITE) moves[position[0] + 1][position[1] - 1] = true;}
 			catch(ArrayIndexOutOfBoundsException ignored) {}
 		}
 
-		if(color == 1 && Objects.equals(board[position[0] - 1][position[1]].code, "--")) {
+		if(color == WHITE && Objects.equals(board[position[0] - 1][position[1]].code, "--")) {      //White pawn moves
 			moves[position[0] - 1][position[1]] = true;
 			if(position[0] == 6 && Objects.equals(board[position[0] - 2][position[1]].code, "--"))
 				moves[position[0] - 2][position[1]] = true;
 
 			//Captures
-			try {if (board[position[0] - 1][position[1] - 1].color == 0) moves[position[0] - 1][position[1] - 1] = true;}
+			try {if (board[position[0] - 1][position[1] - 1].color == BLACK) moves[position[0] - 1][position[1] - 1] = true;}
 			catch(ArrayIndexOutOfBoundsException ignored) {}
-			try {if (board[position[0] - 1][position[1] + 1].color == 0) moves[position[0] - 1][position[1] + 1] = true;}
+			try {if (board[position[0] - 1][position[1] + 1].color == BLACK) moves[position[0] - 1][position[1] + 1] = true;}
 			catch(ArrayIndexOutOfBoundsException ignored) {}
 		}
 
