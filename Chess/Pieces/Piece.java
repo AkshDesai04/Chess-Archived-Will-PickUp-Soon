@@ -12,4 +12,5 @@ public abstract class Piece {
 	public Icon icon;
 	public int[] position;
 	public abstract boolean[][] possibleMoves(Piece[][] board, int[] position);
+	public boolean castling_rights = false;
 }

@@ -10,6 +10,7 @@ public class Knight extends Piece {
 		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Knight.png");
 		this.color = color;
 		this.position = position;
+		castling_rights = true;
 	}
 	public boolean[][] possibleMoves(Piece[][] board, int[] position) {
 		boolean[][] moves = new boolean[8][8];
