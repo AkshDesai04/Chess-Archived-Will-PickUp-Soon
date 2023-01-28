@@ -17,16 +17,32 @@ public class Rook extends Piece {
 		for(int i = 0;i < 8;i++)    for(int j = 0;j < 8;j++)    moves[i][j] = false;
 
 		for(int i = 1;i < 8;i++)        //Up
-			try {moves[position[0] - i][position[1]] = true;}
+			try {
+				if(board[position[0] - i][position[1]].color == color)      break;
+				if(board[position[0] - i][position[1]].color != color && board[position[0] - i][position[1]].color != -1) {     moves[position[0] - i][position[1]] = true;     break;}
+				moves[position[0] - i][position[1]] = true;
+			}
 			catch (ArrayIndexOutOfBoundsException ignored) {}
 		for(int i = 1;i < 8;i++)        //Down
-			try {moves[position[0] + i][position[1]] = true;}
+			try {
+				if(board[position[0] + i][position[1]].color == color)      break;
+				if(board[position[0] + i][position[1]].color != color && board[position[0] + i][position[1]].color != -1) {     moves[position[0] + i][position[1]] = true;     break;}
+				moves[position[0] + i][position[1]] = true;
+			}
 			catch (ArrayIndexOutOfBoundsException ignored) {}
 		for(int i = 1;i < 8;i++)        //Left
-			try {moves[position[0]][position[1] - i] = true;}
+			try {
+				if(board[position[0]][position[1] - i].color == color)      break;
+				if(board[position[0]][position[1] - i].color != color && board[position[0]][position[1] - i].color != -1) {     moves[position[0]][position[1] - i] = true;     break;}
+				moves[position[0]][position[1] - i] = true;
+			}
 			catch (ArrayIndexOutOfBoundsException ignored) {}
 		for(int i = 1;i < 8;i++)        //Right
-			try {moves[position[0]][position[1] + i] = true;}
+			try {
+				if(board[position[0]][position[1] + i].color == color)      break;
+				if(board[position[0]][position[1] + i].color != color && board[position[0]][position[1] + i].color != -1) {     moves[position[0]][position[1] + i] = true;     break;}
+				moves[position[0]][position[1] + i] = true;
+			}
 			catch (ArrayIndexOutOfBoundsException ignored) {}
 
 		return moves;
