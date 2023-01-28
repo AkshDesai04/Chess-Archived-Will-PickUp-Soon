@@ -1,6 +1,8 @@
 package Chess.Pieces;
 
 import javax.swing.*;
+import java.util.LinkedList;
+import java.util.List;
 
 public abstract class Piece {
 	int WHITE = 1, BLACK = 0;
@@ -13,4 +15,5 @@ public abstract class Piece {
 	public int[] position;
 	public abstract boolean[][] possibleMoves(Piece[][] board, int[] position);
 	public boolean castling_rights = false;
+	//List<String> moveList = new LinkedList<String>();
 }
