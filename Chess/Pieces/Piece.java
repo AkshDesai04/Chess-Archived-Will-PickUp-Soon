@@ -3,6 +3,7 @@ package Chess.Pieces;
 import javax.swing.*;
 
 public abstract class Piece {
+	int WHITE = 1, BLACK = 0;
 	int value; //Value of a piece.
 	int color; //0 for black. 1 for white.
 	public String code;
