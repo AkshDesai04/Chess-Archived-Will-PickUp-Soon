@@ -1,3 +1,5 @@
+package Main;
+
 import Chess.BoardAndControls.Board;
 import Chess.BoardAndControls.BoardGUI;
 import Chess.Pieces.Piece;

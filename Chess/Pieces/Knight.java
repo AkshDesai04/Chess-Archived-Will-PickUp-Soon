@@ -6,7 +6,7 @@ public class Knight extends Piece {
 	public Knight (int color, int[] position) {
 		value = 3;
 		name = (color == 1 ? "White":"Black") + " Knight";
-		code = (color == 1 ? "W":"B") + "H";
+		code = (color == 1 ? "W":"B") + "N";
 		icon = new ImageIcon(filePath + (color == 1 ? "White":"Black") + "Knight.png");
 		this.color = color;
 		this.position = position;
